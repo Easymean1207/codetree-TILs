@@ -4,11 +4,12 @@ mods = [0 for i in range(b)]
 result = 0
 
 while True:
-    a, current_mod = int(a/b), int(a%b)
+    current_mod = a % b
        
     mods[current_mod]+=1
+    a = a // b
 
-    if a==0:
+    if a<=1:
         break
 
 for i in range(len(mods)):
