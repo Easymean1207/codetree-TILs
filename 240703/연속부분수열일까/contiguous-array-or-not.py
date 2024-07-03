@@ -8,16 +8,14 @@ n1, n2 = map(int, input().split())
 A_seq = list(map(int, input().split()))
 B_seq = list(map(int, input().split()))
 
-for i in range(len(A_seq)):
-    if A_seq[i] == B_seq[0]:
-            for k in range(1, len(B_seq)):
-                if A_seq[i+1] != B_seq[k]:
-                    print('No')
-                    break
-                else:
-                    print('Yes')
-                    break
-            break    
-    else:
-        print('No')
+is_sub = False
+
+for i in range(n1-n2+1):
+    if A_seq[i:i+n2] == B_seq:
+        is_sub = True
         break
+        
+if is_sub:
+    print("Yes")
+else:
+    print("No")
