@@ -16,6 +16,8 @@ for i in range(len(A_seq)):
                     break
                 else:
                     print('Yes')
+                    break
+            break    
     else:
         print('No')
         break
