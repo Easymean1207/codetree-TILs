@@ -7,7 +7,7 @@ result = []
 init_max = max(nums)
 init_max_idx = nums.index(init_max)
 
-# 결과 리스트에 초기 최대 값의 인덱스 추가
+# 결과 리스트에 (초기 최대 값의 인덱스 + 1) 추가
 result.append(init_max_idx+1)
 
 # 현재 최대 값의 인덱스
@@ -21,7 +21,7 @@ while current_max_idx > 0:
     max_value = max(temp_ls)
     max_index = temp_ls.index(max_value)
     
-    # 결과 리스트에 최대 값 인덱스 추가
+    # 결과 리스트에 (최대 값 인덱스 + 1)추가
     result.append(max_index+1)
 
     # 최대 값 인덱스 갱신
