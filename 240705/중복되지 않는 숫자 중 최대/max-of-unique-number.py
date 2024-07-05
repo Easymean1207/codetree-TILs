@@ -1,6 +1,6 @@
 element_cnt = int(input())
-# elements = list(map(int, input().split()))
-elements = [3,2,3,1]
+elements = list(map(int, input().split()))
+# elements = [3,2,3,1]
 
 elements.sort()
 
