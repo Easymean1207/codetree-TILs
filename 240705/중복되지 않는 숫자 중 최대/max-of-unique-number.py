@@ -1,16 +1,16 @@
 element_cnt = int(input())
 elements = list(map(int, input().split()))
-# elements = [3,2,3,1]
 
+# 입력 값 정렬
 elements.sort()
 
+# 중복 원소 리스트 생성 (중복 값 제거를 위함)
 already_exist = [x for i, x in enumerate(elements) if i != elements.index(x)]
-# print(already_exist)
 
+# 중복 원소를 제거한 리스트로 변경
 elements = [x for x in elements if x not in already_exist]
 
-# print(*elements)
-
+# 리스트 개수에 따른 조건문 설정
 if not elements:
     print(-1)
 
