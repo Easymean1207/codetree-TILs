@@ -18,7 +18,4 @@ for price,i in enumerate(price_of_each_year):
     if min_price > price[i]:
         min_price[i]
 
-print(max_profit)    
-    
-
 print(max_profit)
