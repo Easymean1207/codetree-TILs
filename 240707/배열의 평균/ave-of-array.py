@@ -29,4 +29,4 @@ all_avg = all_sum / (n * len(arr_2d[0]))
 
 print(*row_avg)
 print(*column_avg)
-print(all_avg)
+print(round(all_avg,1))
