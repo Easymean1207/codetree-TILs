@@ -23,6 +23,8 @@ for i in range(n):
 # row_avg == row_sum / 열의 길이(len(arr_2d[0]))
 # column_avg == column_sum / 행의 길이(n)
 # all_avg == all_sum / 전체 개수 (행 x 열)
+# round() 함수를 이용해 소수점 2번째 자리에서 반올림
+
 row_avg = [round(row_sum/len(arr_2d[0]),1) for row_sum in row_sums]
 column_avg = [round(column_sum/n,1) for column_sum in column_sums]
 all_avg = round(all_sum / (n * len(arr_2d[0])),1)
