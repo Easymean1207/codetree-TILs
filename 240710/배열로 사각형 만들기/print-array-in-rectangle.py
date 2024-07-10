@@ -16,5 +16,6 @@ for row in range(1,5):
         # [현재 행, 현재 열] = [현재 행 -1][현재 열] + [현재 행][현재 열 -1]
         arr[row][col] = arr[row-1][col] + arr[row][col-1] 
 
+# unpacking을 이용한 출력
 for row in arr:
     print(*row)
