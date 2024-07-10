@@ -15,11 +15,14 @@ for col in range(n-1, -1, -1):
         for row in range(n):
             mat[row][col] = value
             value += 1
+
     # col 값이 홀수인 경우 -> 역방향
     else:
         for row in range(n - 1, -1, -1):
             mat[row][col] = value
             value += 1
 
-for row in mat:
-    print(*row)
+for row in range(n):
+    for column in range(n):
+        print(mat[row][column], end = ' ')
+    print()
