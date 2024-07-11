@@ -11,6 +11,8 @@ for i in range(n):
         if i == 0 or j == 0:
             arr[i][j] = 1
 
+# 법칙 적용 
+# -> [현재 행][현재 열] = [현재 행 -1][현재 열 -1] + [현재 행 -1][현재 열] + [현재 행][현재 열 -1]
 for i in range(1, n):
     for j in range(1, n):
         arr[i][j] = arr[i-1][j-1] + arr[i-1][j] + arr[i][j-1]
