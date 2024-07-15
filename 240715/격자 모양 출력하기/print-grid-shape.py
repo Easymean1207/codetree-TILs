@@ -12,5 +12,7 @@ for _ in range(m):
     r,c = map(int, input().split())
     placed[r-1][c-1] = r * c
 
+# 격자 출력
+
 for row in placed:
     print(*row)
