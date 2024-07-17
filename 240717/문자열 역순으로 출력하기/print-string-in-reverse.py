@@ -3,5 +3,5 @@ words = [
     for _ in range(4)
 ]
 
-for i in range(3, -1, -1):
+for i in reversed(range(4)):
     print(words[i])
