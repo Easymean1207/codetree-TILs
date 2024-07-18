@@ -2,5 +2,5 @@ word = input()
 
 n = int(input())
 
-results = word[len(word):len(word)-n-1:-1]
+results = word[-1:-n-1:-1]
 print(results)
