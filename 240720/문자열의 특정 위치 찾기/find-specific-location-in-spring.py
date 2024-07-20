@@ -1,3 +1,5 @@
 word, key = input().split()
 
-print(word.find(key))
+location = word.find(key)
+
+print('No' if location == -1 else location)
