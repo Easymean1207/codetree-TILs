@@ -5,9 +5,10 @@ A = input()
 cmd_list = input()
 
 for cmd in cmd_list:
-    # 왼쪽으로 한 칸 밈
+    # 왼쪽으로 한 칸 밈(shift)
     if cmd == 'L':
         A = A[1:] + A[0]
+    # 오른쪽으로 한 칸 밈(shift)
     elif cmd == 'R':
         A = A[-1] + A[:-1]
     else:
