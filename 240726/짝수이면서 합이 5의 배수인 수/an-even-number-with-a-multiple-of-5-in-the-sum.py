@@ -5,10 +5,7 @@ def is_magic_number(n):
     return n % 2 == 0 and digit_sum % 5 == 0
 
 def print_yes_no(condition):
-    if condition:
-        print('Yes')
-    else:
-        print('No')
+    print('Yes') if condition else print('No')
 
 n = int(input())
 
