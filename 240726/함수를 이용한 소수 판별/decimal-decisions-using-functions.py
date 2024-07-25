@@ -23,6 +23,7 @@ def eratosthenes(n):
 def sumOfPrimes(a,b):
     sieve = eratosthenes(b)
 
+    # 범위에 해당하는 값만을 더하여 return
     return sum(i for i in range(a, b+1) if sieve[i])
          
 
