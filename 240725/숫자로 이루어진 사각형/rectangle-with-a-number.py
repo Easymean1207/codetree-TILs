@@ -1,11 +1,12 @@
 def makeSquare(n):
-    cnt = 1
+    cnt = 0
+
     for _ in range(n):
         for i in range(n):
+            cnt = 1 if cnt == 9 else (cnt + 1) % 10
             print(cnt, end = ' ')
-            cnt = (cnt+1) % 10
         print()
 
-n = int(input())
 
+n = int(input())
 makeSquare(n)
