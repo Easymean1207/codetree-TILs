@@ -8,4 +8,7 @@ def eraseAlphabet(input_str):
 str_1 = input()
 str_2 = input()
 
-print(eraseAlphabet(str_1) + eraseAlphabet(str_2))
+str_1 = eraseAlphabet(str_1)
+str_2 = eraseAlphabet(str_2)
+
+print(str_1 + str_2)
