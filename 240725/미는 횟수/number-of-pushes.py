@@ -10,5 +10,9 @@ for _ in range(len(A)-1):
 
     if A == B:
         break
+    
+    if cnt == len(A)-1:
+        cnt = -1
+        break
 
 print(cnt)
