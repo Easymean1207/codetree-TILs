@@ -15,6 +15,6 @@ for _ in range(len(A)-1):
     # 모든 shift 경우에서 일치하지 않는 경우
     if cnt == len(A)-1:
         cnt = -1
-        break
+        
 
 print(cnt)
