@@ -7,4 +7,4 @@ def gcd(a, b):
 
 n, m = map(int, input().split())
 
-print(math.gcd(n,m))
+print(gcd(n,m))
