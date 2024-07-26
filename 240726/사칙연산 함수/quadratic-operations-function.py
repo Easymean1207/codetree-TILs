@@ -9,7 +9,7 @@ def multiply(a, b):
 
 def divide(a, b):
     try:
-        a / b
+        a // b
     except ZeroDivisionError as e:
         return e
 
