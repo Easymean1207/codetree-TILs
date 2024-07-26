@@ -13,7 +13,7 @@ def divide(a, b):
     except ZeroDivisionError as e:
         return e
 
-    return a / b
+    return a // b
 
 def chooseOperation(a, b , operator = ''):
     result = 0
