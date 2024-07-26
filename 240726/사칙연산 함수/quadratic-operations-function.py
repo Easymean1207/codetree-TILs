@@ -34,6 +34,11 @@ def chooseOperation(a, b , operator = ''):
 
 a, o ,c = input().split()
 a, c = int(a), int(c)
+right_operator = ['+','-','*','/']
+
 result = chooseOperation(a,c,o)
 
-print(f'{a} {o} {c} = {result}')
+if o in right_operator:
+    print(f'{a} {o} {c} = {result}')
+else:
+    print('False')
