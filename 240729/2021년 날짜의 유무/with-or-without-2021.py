@@ -7,7 +7,7 @@ def isDateExist(month, day):
         return True
     
     # 30일까지 있는 달 확인
-    elif month in day and day <= 30:
+    elif month in day_30 and day <= 30:
         return True
     
     # 2월 확인
