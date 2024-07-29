@@ -2,10 +2,6 @@ def isDateExist(month, day):
     day_31 = [1,3,5,7,8,10,12]
     day_30 = [4,6,9,11]
 
-    # # 달의 범위 체크
-    # if month < 1 or month > 12:
-    #     return False
-
     # 31일까지 있는 달 확인
     if month in day_31 and day <= 31:
         return True
@@ -19,7 +15,8 @@ def isDateExist(month, day):
         return True
 
     # 존재하지 않는 날짜 처리
-    return False
+    else:
+        return False
 
 
 M,D = tuple(map(int, input().split()))
