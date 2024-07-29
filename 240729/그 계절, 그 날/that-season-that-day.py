@@ -34,7 +34,7 @@ def isDateExist(year, month, day):
 
 ''' 
     계절 결정 함수
-    계절에 따라 다른 정수 값(1,2,3,4,-1)
+    계절에 따라 다른 정수 값(1,2,3,4,-1) 반환
 '''
 def decideSeason(month):
     # 계절이 봄인 경우
@@ -57,7 +57,9 @@ def decideSeason(month):
         return -1
 
 
-# 윤년 판별 함수
+'''
+    윤년 판별 함수 
+'''
 def isLeapYear(year):
     if year % 4 == 0 and year % 100 !=0:
         return True
