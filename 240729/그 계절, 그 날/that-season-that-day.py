@@ -1,3 +1,7 @@
+''' 
+    날짜가 존재하면 계절을 반환, 
+    존재하지 않으면 -1을 반환 
+'''
 def isDateExist(year, month, day):
     day_31 = [1,3,5,7,8,10,12]
     day_30 = [4,6,9,11]
@@ -16,6 +20,7 @@ def isDateExist(year, month, day):
 
     # 2월 케이스
     elif month == 2:
+        # 윤년과는 관계없는 경우
         if day <= 28:
             return decideSeason(month)
         # 윤년 경우 처리(2월 29일인데 윤년)
@@ -27,7 +32,10 @@ def isDateExist(year, month, day):
     else:
         return -1
 
-# 계절 결정 함수
+''' 
+    계절 결정 함수
+    계절에 따라 다른 정수 값(1,2,3,4,-1)
+'''
 def decideSeason(month):
     # 계절이 봄인 경우
     if month >= 3 and month <= 5:
@@ -44,6 +52,9 @@ def decideSeason(month):
     # 계절이 겨울인 경우
     elif month == 12 or month == 1 or month == 2:
         return 4
+
+    else:
+        return -1
 
 
 # 윤년 판별 함수
