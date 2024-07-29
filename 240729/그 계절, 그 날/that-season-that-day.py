@@ -24,6 +24,8 @@ def isDateExist(year, month, day):
         else:
             return -1
 
+    else:
+        return -1
 
 # 계절 결정 함수
 def decideSeason(month):
