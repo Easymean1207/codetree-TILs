@@ -9,5 +9,6 @@ def magicBox(a, b):
     return a, b
 
 a, b = tuple(map(int, input().split()))
-a, b = magicBox(a,b)
-print(a,b)
+# a, b = magicBox(a,b)
+# print(a,b)
+print(*magicBox(a,b))
