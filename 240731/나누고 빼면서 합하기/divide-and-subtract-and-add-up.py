@@ -2,7 +2,7 @@
 # 숫자 m
 
 def magicFunction(sequence, m):
-    output = 0
+    output = sequence[m-1]
 
     for i in range(len(sequence)):
         while m > 1:
@@ -10,9 +10,11 @@ def magicFunction(sequence, m):
                 m -=1
             else:
                 m //=2
-            output += sequence[m]
-    
+            output += sequence[m-1]
+
     return output
 
 n, m = tuple(map(int, input().split()))
 A = list(map(int, input().split()))
+
+print(magicFunction(A,m))
