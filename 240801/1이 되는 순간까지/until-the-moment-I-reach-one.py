@@ -12,6 +12,7 @@ def recursiveDivide(n, cnt):
         n //=3
 
     cnt +=1
+    
     return recursiveDivide(n, cnt)
     
 
