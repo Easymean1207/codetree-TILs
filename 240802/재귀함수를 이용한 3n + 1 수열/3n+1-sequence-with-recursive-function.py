@@ -1,6 +1,6 @@
-def recursive3n1(n, cnt),:
+def recursive3n1(n, cnt):
     if n == 1:
-        return 
+        return cnt
 
     if n %2 == 0:
         n /=2
