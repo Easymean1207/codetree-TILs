@@ -13,8 +13,11 @@ def multi_lcm(nums):
     if len(nums) == 1:
         return nums[0]
     
-    # 재귀 호출
-    return lcm(nums[0], multi_lcm(nums[1:]))
+    # 재귀 호출:
+    # 각 재귀마다 current(첫번째 원소)와 나머지 원소들 간의 최소 공배수를 구함
+    current = nums[0]
+    nums = nums[1:]
+    return lcm(current, multi_lcm(nums))
 
 
 n = int(input())
