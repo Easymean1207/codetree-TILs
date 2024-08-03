@@ -7,6 +7,7 @@ def gcd(a,b):
 def lcm(a,b):
     return a * b // gcd(a,b)
 
+
 # 각 재귀 당 2개의 원소를 묶어 그 재귀에서의 lcm 도출
 def multi_lcm(nums):
     # 종료 조건: 원소가 하나면 최소공배수는 그 원소 자체가 됨.
