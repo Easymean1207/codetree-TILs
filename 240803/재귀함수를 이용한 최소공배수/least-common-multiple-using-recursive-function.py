@@ -9,7 +9,7 @@ def lcm(a,b):
 
 # 각 재귀 당 2개의 원소를 묶어 그 재귀에서의 lcm 도출
 def multi_lcm(nums):
-    # 종료 조건: 원소가 하나면 최소공배수를 도출할 수 없음
+    # 종료 조건: 원소가 하나면 최소공배수는 그 원소 자체가 됨.
     if len(nums) == 1:
         return nums[0]
     
