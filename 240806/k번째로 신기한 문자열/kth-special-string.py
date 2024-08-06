@@ -6,8 +6,7 @@ def findKthWords(words, key, target_seq):
     filterd_words.sort()
         
     # k번째 단어 출력
-    return filterd_words[k-1]
-    
+    return filterd_words[k-1] 
 
 
 n, k, T = input().split()
