@@ -7,7 +7,7 @@ class Confidential:
 
 code, location, time = input().split()
 
-confidential1 = Confidential(code, location, time)
-print(f"secret code : {confidential1.secret_code}")
-print(f"meeting point : {confidential1.meeting_location}")
-print(f"time : {confidential1.meeting_time}")
+command1 = Confidential(code, location, time)
+print(f"secret code : {command1.secret_code}")
+print(f"meeting point : {command1.meeting_location}")
+print(f"time : {command1.meeting_time}")
