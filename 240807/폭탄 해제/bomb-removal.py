@@ -5,11 +5,11 @@ class RequireInfo:
         self.right_timing = right_timing
 
 
-release_code, color, timing = tuple(input().split())
-color = color.capitalize()
-timing = int(timing)
+given_code, given_color, given_timing = tuple(input().split())
+given_color = given_color.capitalize()
+given_timing = int(given_timing)
 
-info1 = RequireInfo(release_code, color, timing)
+info1 = RequireInfo(given_code, given_color, given_timing)
 
 print(f"code : {info1.release_code}")
 print(f"color : {info1.line_color}")
