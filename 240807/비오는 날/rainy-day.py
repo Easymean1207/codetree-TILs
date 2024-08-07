@@ -35,12 +35,12 @@ for _ in range(n):
 # date 순으로 자료 정렬
 weather_datas.sort(key=lambda x:x.date)
 
-rain_idx = findRain(weather_datas)
-# print(
-#     weather_datas[rain_idx].date, 
-#     weather_datas[rain_idx].day, 
-#     weather_datas[rain_idx].weather
-# )
+rain_idx = findRainIndex(weather_datas)
+print(
+    weather_datas[rain_idx].date,
+    weather_datas[rain_idx].day,
+    weather_datas[rain_idx].weather
+)
 
 rainy = findRain(weather_datas)
-print(rainy.date, rainy.day, rainy.weather)
+# print(rainy.date, rainy.day, rainy.weather)
