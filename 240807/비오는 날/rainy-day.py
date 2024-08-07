@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import List, Optional
 
 class WeatherData:
     def __init__(self, date:str, day:str, weather:str):
@@ -7,7 +8,7 @@ class WeatherData:
         self.weather = weather
 
 # weather_datas안의 weather_data에서 Rain인 날의 index를 return하는 함수
-def findRainIndex(weather_datas: list[WeatherData]):
+def findRainIndex(weather_datas: List[WeatherData]) -> Optional[int]:
     for i, weather_data in enumerate(weather_datas):
         if weather_data.weather == 'Rain':
             # return weather_data
@@ -15,7 +16,7 @@ def findRainIndex(weather_datas: list[WeatherData]):
     return None
 
 # weather_datas안의 weather_data에서 Rain인 날을 return하는 함수
-def findRain(weather_datas: list[WeatherData]):
+def findRain(weather_datas: list[WeatherData]) -> Optional[WeatherData]:
     for i, weather_data in enumerate(weather_datas):
         if weather_data.weather == 'Rain':
             return weather_data
