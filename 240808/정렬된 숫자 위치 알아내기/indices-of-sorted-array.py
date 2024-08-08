@@ -10,6 +10,7 @@ def findAterIndex(origin, after):
         after_idx = after.index(element)+1
         print(after_idx, end = ' ')
 
+
 length_of_sequence = int(input())
 given_element = list(map(int, input().split()))
 sequences = []
@@ -18,14 +19,7 @@ for i in range(length_of_sequence):
     given_index = i+1
     sequences.append(Sequence(given_element[i], given_index))
 
-# for sequence in sequences:
-#     print(sequence.element, end = ' ')
-# print()
-
 # 정렬된 sequence를 변수에 할당
-after_sorted = sorted(sequences, key= lambda x:x.element)
-
-# for sequence in after_sorted:
-#     print(sequence.element, end = ' ')
+after_sorted = sorted(sequences, key= lambda x:(x.element, x.index))
 
 findAterIndex(sequences, after_sorted)
