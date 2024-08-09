@@ -8,10 +8,11 @@ def calculateElapsedTime(start, end):
     # 11일 이전인 경우
     if start.day > end.day:
         return -1
-    
-    # 11일인 경우, 시간과 분 비교
-    if (start.hour, start.minute) > (end.hour, end.minute):
-        return -1
+
+    # 11인 경우, 시간과 분을 비교
+    elif start.day == end.day:
+        if (start.hour, start.minute) > (end.hour, end.minute):
+            return -1
     
     elapsed_time = 0
     
