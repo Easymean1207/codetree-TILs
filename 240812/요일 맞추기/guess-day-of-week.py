@@ -1,5 +1,5 @@
 # 2011년 m1월 d1일이 월요일이라고 가정할 때
-# 2011년 m1월 d2일이 무슨 요일인가?
+# 2011년 m2월 d2일이 무슨 요일인가?
 import datetime
 
 def calculateDay(base_date, target_date):
