@@ -8,7 +8,7 @@ for i in range(K):
     start,end = tuple(map(int, input().split()))
     
     # 시작점 ~ 끝 채우기
-    for i in range(start, end+1):
-        stacked[i]+=1
+    for j in range(start, end+1):
+        stacked[j]+=1
 
 print(max(stacked))
