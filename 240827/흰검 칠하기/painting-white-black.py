@@ -1,73 +1,44 @@
-''' 
-    아무 타일에서 시작
-    n번의 명령
-    x L -> 왼쪽으로 이동, 현재 타일 포함 흰색으로
-    x R -> 오른쪽으로 이동, 현재 타일 포함 검은색으로
-    각 명령 후 마지막 타일에 위치
-    타일이 각각 검은색, 흰색이 2번 되면 회색이 됨
-'''
-OFFSET = 100
-MAX_RANGE = 1000 * OFFSET * 2
-
-# n번의 명령
+MAX_K = 100000
+# 변수 선언 및 입력:
 n = int(input())
+a = [0] * (2 * MAX_K + 1)
+cnt_b = [0] * (2 * MAX_K + 1)
+cnt_w = [0] * (2 * MAX_K + 1)
+b, w, g = 0, 0, 0
 
-# 명령을 담을 리스트
-commands = []
-
-# 색이 칠해지는 실제 배열
-location = [0 for _ in range(MAX_RANGE+1)]
-
-# 흰색, 검은색 색칠 기록을 위한 배열
-white_record = [0] * (MAX_RANGE + 1)
-black_record = [0] * (MAX_RANGE + 1)
-# 실제 검,흰,회 개수
-black_cnt, white_cnt, gray_cnt = 0, 0 , 0
-
-start = 0
-
-# 각 명령 세분화
+cur = MAX_K
 for _ in range(n):
-    distance, direction = input().split()
-    distance = int(distance)
+    x, c = tuple(input().split())
+    x = int(x)
 
-    if direction == 'L':
-        left_range = start - distance
-        right_range = start
-        start-=distance
+    if c == 'L':
+        # x칸 왼쪽으로 칠합니다.
+        while x > 0:
+            a[cur] = 1
+            cnt_w[cur] += 1
+            x -= 1
 
-    elif direction == 'R':
-        left_range = start
-        right_range = start + distance
-        start+=distance
+            if x: 
+                cur -= 1
+    else:
+        # x칸 오른쪽으로 칠합니다.
+        while x > 0:
+            a[cur] = 2
+            cnt_b[cur] += 1
+            x -= 1
 
-    commands.append([left_range, right_range, direction])
+            if x: 
+                cur += 1
 
-# print(commands)
+for i in range(2 * MAX_K + 1):
+    # 검은색과 흰색으로 두 번 이상 칠해진 타일은 회색입니다.
+    if cnt_b[i] >= 2 and cnt_w[i] >= 2: 
+        g += 1
+    # 그렇지 않으면 현재 칠해진 색깔이 곧 타일의 색깔입니다.
+    elif a[i] == 1: 
+        w += 1
+    elif a[i] == 2: 
+        b += 1
 
-
-for x1, x2, direction in commands:
-    x1, x2 = x1 + OFFSET, x2 + OFFSET
-
-    for i in range(x1, x2):
-        # 방향이 'L'인 경우 해당 범위만큼 흰색으로 색칠
-        if direction == 'L':
-            location[i] = -1
-            white_record[i] +=1
-
-        # 방향이 'R'인 경우 해당 범위만큼 검은색으로 색칠
-        elif direction == 'R':
-            location[i] = 1
-            black_record[i] +=1
-
-for i in range(len(location)):
-    # 검, 흰이 2번 이상인 경우는 회색
-    if black_record[i] >=2 and white_record[i] >=2:
-        gray_cnt +=1
-    # 그 외의 경우는 마지막에 색칠된 색을 따라감    
-    elif location[i] == -1:
-        white_cnt +=1
-    elif location[i] == 1:
-        black_cnt +=1
-
-print(white_cnt, black_cnt, gray_cnt)
+# 정답을 출력합니다.
+print(w, b, g)
