@@ -15,9 +15,12 @@ n = int(input())
 # 명령을 담을 리스트
 commands = []
 
+# 색이 칠해지는 실제 배열
+location = [0 for _ in range(MAX_RANGE+1)]
+
 # 흰색, 검은색 색칠 기록을 위한 배열
-white_record = [0] * (2 * MAX_RANGE + 1)
-black_record = [0] * (2 * MAX_RANGE + 1)
+white_record = [0] * (MAX_RANGE + 1)
+black_record = [0] * (MAX_RANGE + 1)
 # 실제 검,흰,회 개수
 black_cnt, white_cnt, gray_cnt = 0, 0 , 0
 
@@ -42,7 +45,6 @@ for _ in range(n):
 
 # print(commands)
 
-location = [0 for _ in range(MAX_RANGE+1)]
 
 for x1, x2, direction in commands:
     x1, x2 = x1 + OFFSET, x2 + OFFSET
