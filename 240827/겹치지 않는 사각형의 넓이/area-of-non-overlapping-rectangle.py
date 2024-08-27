@@ -1,6 +1,8 @@
+# OFFSET, 최대 범위 지정
 OFFSET = 1000
 MAX_RANGE = OFFSET * 2
 
+# 최대 범위를 포함하는 2차원 배열(직사각형)
 grid = [[0]*(MAX_RANGE+1) for _ in range(MAX_RANGE+1)]
 
 # 직사각형 A의 좌표 (x1, y1, x4, y2)
