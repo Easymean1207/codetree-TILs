@@ -15,20 +15,41 @@ x3, y3, x4, y4 = tuple(map(int, input().split()))
 x1, y1, x2, y2 = x1+OFFSET, y1+OFFSET, x2+OFFSET, y2+OFFSET
 x3, y3, x4, y4 = x3+OFFSET, y3+OFFSET, x4+OFFSET, y4+OFFSET
 
-# 첫 번째 직사각형의 넓이
-rect1 = (x2 - x1) * (y2 - y1)
+# 좌표 설정
+coordinate = [
+    [0 for _ in range(MAX_RANGE+1)]
+    for _ in range(MAX_RANGE + 1)
+]
 
-# 겹치는 영역의 좌표
-overlap_x1 = max(x1, x3)
-overlap_y1 = max(y1, y3)
-overlap_x2 = min(x2, x4)
-overlap_y2 = min(y2, y4)
+# 첫 번째 직사각형 표시
+for i in range(x1, x2):
+    for j in range(y1, y2):
+        coordinate[i][j] = 1
 
-# 겹치는 영역 구하기
-if overlap_x1 < overlap_x2 and overlap_y1 < overlap_y2:
-    overlap_area = (overlap_x2 - overlap_x1) * (overlap_y2 - overlap_y1)
+# 두 번째 직사각형 표시
+for i in range(x3, x4):
+    for j in range(y3, y4):
+        coordinate[i][j] = 2
+
+# 겹치는 지 판별을 위한 변수
+isOverlapped = False
+remained_x1, remained_y1, remained_x2, remained_y2 = MAX_RANGE, MAX_RANGE, 0, 0
+
+# 겹치지 않는 부분 (아직 1로 남아있는 부분) 표시
+for i in range(MAX_RANGE+1):
+    for j in range(MAX_RANGE+1):
+        if coordinate[i][j] == 1:
+            isOverlapped = True
+            remained_x1 = min(remained_x1, i)
+            remained_y1 = min(remained_y1, j)
+            remained_x2 = max(remained_x2, i)
+            remained_y2 = max(remained_y2, j)
+
+# print(remained_x1, remained_y1, remained_x2, remained_y2)
+
+if not isOverlapped:
+    remain_area = 0
 else:
-    overlap_area = 0
+    remain_area = (remained_x2+1 - remained_x1) * (remained_y2+1 - remained_y1)
 
-extra_need = rect1
-print(extra_need)
+print(remain_area)
