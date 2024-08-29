@@ -1,7 +1,7 @@
 # 숫자의 개수 N
 N = int(input())
 
-same_cnt = 0
+same_cnt = 1
 result = 0
 nums = []
 
