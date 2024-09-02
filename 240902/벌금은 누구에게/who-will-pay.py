@@ -6,7 +6,7 @@ N,M,K = tuple(map(int, input().split()))
 
 target_list = []
 student = [0] * N
-picked_number = 0
+picked_number = -1
 
 for _ in range(M):
     # 해당 회차 벌칙 횟수를 누적시킬 학생 번호 선정
