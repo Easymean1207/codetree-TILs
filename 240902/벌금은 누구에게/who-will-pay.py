@@ -5,7 +5,7 @@
 N,M,K = tuple(map(int, input().split()))
 
 target_list = []
-student = [0] * N
+student = [0] * (N+1)
 picked_number = -1
 
 for _ in range(M):
@@ -14,10 +14,10 @@ for _ in range(M):
     target_list.append(target)
 
     # student에 벌칙 정보를 갱신
-    student[target-1]+=1
+    student[target]+=1
 
     # 조건 만족 시 반복문 종료
-    if student[target-1] == K:
+    if student[target] == K:
         picked_number = target
         break
 
