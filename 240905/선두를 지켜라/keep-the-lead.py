@@ -1,8 +1,3 @@
-def has_overtaken(A_pos_prev, B_pos_prev, A_pos_curr, B_pos_curr):
-
-    return (A_pos_prev >= B_pos_prev and A_pos_curr < B_pos_curr) \
-            or (A_pos_prev <= B_pos_prev and A_pos_curr > B_pos_curr)
-
 # A,B -> N번, M동 이동
 
 N,M = tuple(map(int, input().split()))
