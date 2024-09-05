@@ -39,8 +39,8 @@ for velocity, times in B_moves:
         B_current += velocity
         B_positions.append(B_current)
 
-print(A_positions)
-print(B_positions)
+# print(A_positions)
+# print(B_positions)
 
 overtake_cnt = 0
 current_leader = None
