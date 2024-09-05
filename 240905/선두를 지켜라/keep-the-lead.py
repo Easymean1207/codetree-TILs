@@ -39,13 +39,26 @@ for velocity, times in B_moves:
         B_current += velocity
         B_positions.append(B_current)
 
-# print(A_positions)
-# print(B_positions)
+print(A_positions)
+print(B_positions)
 
 overtake_cnt = 0
+current_leader = None
 
-for t in range(1, len(A_positions)):
-    if has_overtaken(A_positions[t-1], B_positions[t-1], A_positions[t], B_positions[t]):
-        overtake_cnt += 1
-        
+for t in range(len(A_positions)):
+    if A_positions[t] > B_positions[t]:
+        new_leader = 'A'
+    elif B_positions[t] > A_positions[t]:
+        new_leader = 'B'
+    else:
+        new_leader = None
+
+    if new_leader != current_leader:
+        if new_leader is not None:
+            overtake_cnt += 1
+        current_leader = new_leader
+
+# 처음 선두를 잡았을 경우를 제외
+overtake_cnt -=1
+
 print(overtake_cnt)
