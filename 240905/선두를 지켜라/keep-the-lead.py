@@ -1,4 +1,5 @@
 def has_overtaken(A_pos_prev, B_pos_prev, A_pos_curr, B_pos_curr):
+
     return (A_pos_prev >= B_pos_prev and A_pos_curr < B_pos_curr) \
             or (A_pos_prev <= B_pos_prev and A_pos_curr > B_pos_curr)
 
@@ -42,6 +43,7 @@ for velocity, times in B_moves:
 # print(B_positions)
 
 overtake_cnt = 0
+
 for t in range(1, len(A_positions)):
     if has_overtaken(A_positions[t-1], B_positions[t-1], A_positions[t], B_positions[t]):
         overtake_cnt += 1
