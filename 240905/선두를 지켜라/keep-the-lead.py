@@ -21,7 +21,7 @@ for _ in range(M):
     v,t = input().split()
     B_moves.append((int(v),int(t)))
 
-# A,B의 실제 이동값
+# A,B의 실제 이동반경
 A_positions = []
 B_positions = []
 
