@@ -16,22 +16,24 @@ for _ in range(M):
     v2.append(vi)
     t2.append(ti)
 
-A_movements = [0,] # A가 이동한 거리
-B_movements = [0,] # B가 이동한 거리
+A_movements = [0] * (sum(t) + 1) # A가 이동한 거리
+B_movements = [0] * (sum(t2) + 1) # B가 이동한 거리
 
 # Please write your code here.
-currentA = 0 # A의 현재 위치
-currentB = 0 # B의 현재 위치
+currentTimeA = 1 # A의 현재 시간
+currentTimeB = 1 # B의 현재 시간
 
 # 각 구간의 속도로, 그 구간의 시간만큼 1초씩 위치를 기록
 for i in range(N):
     for _ in range(t[i]):
-        A_movements.append(A_movements[-1] + v[i])
+        A_movements[currentTimeA] = A_movements[currentTimeA-1] + v[i]
+        currentTimeA+=1
 # print(A_movements)
 
 for i in range(M):
     for _ in range(t2[i]):
-        B_movements.append(B_movements[-1] + v2[i])
+        B_movements[currentTimeB] = B_movements[currentTimeB-1] + v2[i]
+        currentTimeB+=1
 # print(B_movements)
 
 minTime = min(len(A_movements), len(B_movements)) # 둘 중 최소 시간
