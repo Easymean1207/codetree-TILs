@@ -27,10 +27,12 @@ currentB = 0 # B의 현재 위치
 for i in range(N):
     for _ in range(t[i]):
         A_movements.append(A_movements[-1] + v[i])
+# print(A_movements)
 
 for i in range(M):
     for _ in range(t2[i]):
         B_movements.append(B_movements[-1] + v2[i])
+# print(B_movements)
 
 minTime = min(len(A_movements), len(B_movements)) # 둘 중 최소 시간
 changedCount = 0; # 선두가 바뀐 횟수
