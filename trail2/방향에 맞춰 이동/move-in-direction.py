@@ -9,19 +9,22 @@ currentY = 0
 
 dx, dy = [0, 0, 1, -1], [1, -1, 0, 0] # N, S, E, W
 
-for i in range(n):
-    for j in range(dist[i]):
-        if dir[i] == 'N':
-            currentX, currentY = currentX + dx[0], currentY + dy[0]
-        elif dir[i] == 'S':
-            currentX, currentY = currentX + dx[1], currentY + dy[1]
-        elif dir[i] == 'E':
-            currentX, currentY = currentX + dx[2], currentY + dy[2]
-        elif dir[i] == 'W':
-            currentX, currentY = currentX + dx[3], currentY + dy[3]
-        else:
-            continue
+for direction, distance in moves:
+    distance = int(distance)
+
+    if direction == 'N':
+        currentX += dx[0] * distance
+        currentY += + dy[0] * distance
+    elif direction == 'S':
+        currentX += dx[1] * distance
+        currentY += dy[1] * distance
+    elif direction == 'E':
+        currentX += dx[2] * distance
+        currentY += dy[2] * distance
+    elif direction == 'W':
+        currentX += dx[3] * distance
+        currentY += dy[3] * distance
+    else:
+        continue
+
 print(currentX, currentY)
-    
-
-
