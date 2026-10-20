@@ -16,12 +16,12 @@ for r,c in points:
     r -=1
     c -=1
 
-    # 해당 칸에 색칠을 칠하고 색칠된 인접칸 개수를 0으로 설정
+    # 해당 칸에 색칠을 칠하고 색칠된 인접칸 개수(adjacentColoredCount)를 0으로 설정
     grid[r][c]=1
     adjacentColoredCount=0
 
     for each_direction in range(4):
-        # 해당 칸의 인접 칸들(상하좌우)
+        # 해당 칸의 인접 칸(상하좌우) 계산
         nr = r + dr[each_direction]
         nc = c + dc[each_direction]
 
