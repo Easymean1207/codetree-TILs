@@ -11,24 +11,26 @@ dc = [0, 1, 0, -1]
 #    위  오  아  왼
 
 reflectedCount = 0 # 튕긴 횟수 설정
+side = (k-1)//n # 변의 방향 확인
 
 # K의 위치와 진행방향 설정
-if k >= 1 and k <= n: # K가 윗변에 위치, 아래쪽으로 진행
-    r = 0
-    c = k-1
-    direction = 2
-elif k >= n+1 and k <= 2*n: # K가 오른변에 위치, 왼쪽으로 진행
-    r = k-1-n
-    c = n-1
-    direction = 3
-elif k >= 2*n+1 and k <= 3*n: # K가 아래변에 위치, 위쪽으로 진행
-    r = n-1
-    c = 3*n-k
-    direction = 0
-elif k >= 3*n+1 and k <= 4*n: # K가 왼쪽변에 위치, 오른쪽으로 진행
-    r = 4*n-k
-    c = 0
-    direction = 1
+match side:
+    case 0: # K가 윗변에 위치, 아래쪽으로 진행
+        r = 0
+        c = k-1
+        direction = 2
+    case 1: # K가 오른변에 위치, 왼쪽으로 진행
+        r = k-1-n
+        c = n-1
+        direction = 3
+    case 2: # K가 아래변에 위치, 위쪽으로 진행
+        r = n-1
+        c = 3*n-k
+        direction = 0
+    case 3: # K가 왼쪽변에 위치, 오른쪽으로 진행
+        r = 4*n-k
+        c = 0
+        direction = 1
 
 while in_range(r,c):
     # 거울에 따라 방향 변경
