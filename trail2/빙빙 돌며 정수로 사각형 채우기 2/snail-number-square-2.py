@@ -20,16 +20,13 @@ for num in range(1, n*m+1):
     nr = r + dr[direction]
     nc = c + dc[direction]
 
-    # 만약에 범위를 벗어나거나 이미 채워져있다면 회전
+    # 이동한 위치가 범위를 벗어나거나 이미 값이 채워져있다면 회전
     if not in_range(nr,nc) or square[nr][nc] != 0:
         direction = (direction + 1) % 4
-
-        # 회전 후 다시 1칸 이동
-        nr = r + dr[direction]
-        nc = c + dc[direction]
     
     # 현재 위치를 이동한 위치로 갱신
-    r,c = nr, nc
+    r = r + dr[direction]
+    c = c + dc[direction]
 
 # 직사각형 출력
 for row in square:
