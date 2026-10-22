@@ -30,6 +30,7 @@ for num in range(1, n*m+1):
 
 for row in square:
     for element in row:
+        # 직사각형의 숫자를 알파벳으로 변경
         alphabet = chr(65 + (element-1) % 26)
         print(alphabet, end = ' ')
     print()
