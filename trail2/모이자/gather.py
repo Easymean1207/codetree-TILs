@@ -13,6 +13,7 @@ for gatherHouse in range(n):
     for currentHouse in range(n):
         distance = abs(currentHouse - gatherHouse) # 거리는 (모일 집 - 현재 집)
 
+        # (거리 * 인원수)만큼 totalDistance에 더해주기
         totalDistance = totalDistance + distance * A[currentHouse]
     
     minTotalDistance = min(minTotalDistance, totalDistance)
