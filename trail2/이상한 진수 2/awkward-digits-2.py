@@ -4,7 +4,7 @@ a = input()
 candidates = []
 
 for i in range(len(a)):
-    changed = list(a) # 값의 변경을 위해 리스트로
+    changed = list(a) # 값의 변경을 위해 리스트 상태의 a를 담을 변수 선언
 
     # i번째 회차에 i번째 인덱스의 비트 반전
     if changed[i] == '1':
