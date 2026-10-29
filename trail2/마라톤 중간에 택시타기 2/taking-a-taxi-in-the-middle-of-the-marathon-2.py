@@ -17,7 +17,7 @@ for i in range(1, n-1):
     # i-1 -> i+1 거리
     bypassDistance = abs(x[i+1] - x[i-1]) + abs(y[i+1] - y[i-1])
 
-    # 건너뛰었을 때 절약 가능한 거리 계산
+    # i번째 체크 포인트를 건너뛰었을 때 절약 가능한 거리 계산
     savedDistance = originDistance - bypassDistance
     # 현재 savedDistance와 이전 max값을 비교해서 큰 쪽을 저장
     maxSavedDistance = max(maxSavedDistance, savedDistance)
