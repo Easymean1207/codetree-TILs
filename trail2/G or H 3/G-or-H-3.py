@@ -17,10 +17,10 @@ for pos, char in zip(x, c):
 
 # 수직선에서 범위내의 최대 점수
 maxScore = 0
-for start in range(0, 10000-k+1):
+for i in range(10000-k+1): # i(임의의 시작점 s)
     currentScore = 0
-    for pos in range(start, start+k+1): # [s, s+k] 범위
-        currentScore += record[pos] # 현 범위에서의 점수
+    for j in range(i, i+k+1): # [s, s+k] 범위
+        currentScore += record[j] # 현 범위에서의 점수
 
     maxScore = max(maxScore, currentScore) # 비교 후, 최대값 갱신
 
