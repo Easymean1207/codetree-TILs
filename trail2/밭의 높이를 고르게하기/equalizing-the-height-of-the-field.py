@@ -6,15 +6,17 @@ arr = list(map(int, input().split()))
 
 # Please write your code here.
 import sys
-minCost = sys.maxsize
 
+
+minCost = sys.maxsize
 
 for i in range(N-T+1): # 시작점
     cost = 0
-    
-    for j in range(i, i+T): # i ~ T 구간
+    # i ~ T 구간 별로 비용 계산
+    for j in range(i, i+T):
         cost += abs(arr[j] - H)
     
+    # 최솟값
     minCost = min(minCost, cost)
 
 print(minCost)
